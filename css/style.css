@@ -1,0 +1,575 @@
+:root {
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --text: #07142b;
+      --muted: #667085;
+      --navy: #14213d;
+      --blue: #1f4e79;
+      --orange: #ef5b2a;
+      --orange-dark: #d9471b;
+      --gold: #f5b642;
+      --border: #e3e9f2;
+      --soft: #f8fafc;
+      --shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+      --max-width: 980px;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f4f7fb 360px),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(100% - 24px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* Header */
+
+    .site-header {
+      padding: 18px 0 14px;
+      background: #ffffff;
+      border-bottom: 1px solid #edf1f7;
+    }
+
+    .header-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .header-logo img {
+      width: 185px;
+      height: auto;
+      max-height: 62px;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .main-nav a {
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: #f8fafc;
+      border: 1px solid #edf1f7;
+      transition: 0.2s ease;
+    }
+
+    .main-nav a:nth-child(2) {
+      color: #ffffff;
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .main-nav a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+    }
+
+    /* Hero */
+
+    .hero {
+      margin-top: 22px;
+      margin-bottom: 34px;
+    }
+
+    .hero-banner {
+      position: relative;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 34px 22px;
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(7, 20, 43, 0.22) 0%, rgba(7, 20, 43, 0.86) 100%),
+        url("images/hero-greece.webp") center/cover no-repeat;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-banner h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      line-height: 1.16;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-description {
+      max-width: 720px;
+      margin: 16px auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Casino Showcase */
+
+    .casino-showcase {
+      margin-bottom: 46px;
+    }
+
+    .showcase-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .showcase-head h2 {
+      font-size: clamp(22px, 5vw, 30px);
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .showcase-head p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .casino-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .casino-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 38px 108px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.045);
+      transition: 0.2s ease;
+    }
+
+    .casino-row:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 91, 42, 0.35);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.075);
+    }
+
+    .casino-rank {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #fff3ed;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .casino-logo-box {
+      width: 100%;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #07111f;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .casino-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .casino-info {
+      min-width: 0;
+    }
+
+    .casino-title {
+      font-size: 14px;
+      line-height: 1.22;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .casino-desc {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .casino-action {
+      grid-column: 1 / -1;
+    }
+
+    .play-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 42px;
+      padding: 10px 16px;
+      background: linear-gradient(135deg, var(--orange), #ff7a3d);
+      color: #ffffff;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: 0 10px 18px rgba(239, 91, 42, 0.18);
+      transition: 0.2s ease;
+    }
+
+    .play-btn:hover {
+      background: linear-gradient(135deg, var(--orange-dark), var(--orange));
+      transform: translateY(-1px);
+    }
+
+    .disclaimer {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* Content */
+
+    .content-section {
+      margin: 46px 0;
+    }
+
+    .content-box {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      color: var(--text);
+    }
+
+    .content-box h2 {
+      margin: 34px 0 14px;
+      font-size: clamp(24px, 5vw, 34px);
+      line-height: 1.18;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .content-box h2:first-child {
+      margin-top: 0;
+    }
+
+    .content-box h3 {
+      margin: 24px 0 10px;
+      font-size: 21px;
+      line-height: 1.25;
+      color: var(--blue);
+    }
+
+    .content-box p {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .content-box ul,
+    .content-box ol {
+      margin: 0 0 20px 22px;
+      color: var(--muted);
+    }
+
+    .content-box li {
+      margin-bottom: 8px;
+      padding-left: 3px;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 22px 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #ffffff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    th {
+      background: var(--soft);
+      color: var(--text);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    td:first-child {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .content-note {
+      margin: 22px 0;
+      padding: 18px 20px;
+      border-radius: 12px;
+      border-left: 4px solid var(--orange);
+      background: #fff7f3;
+      color: var(--muted);
+    }
+
+    .content-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    /* FAQ */
+
+    .faq-section {
+      margin: 46px 0;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: clamp(26px, 5vw, 36px);
+      line-height: 1.18;
+      color: var(--text);
+    }
+
+    .section-title p {
+      max-width: 620px;
+      margin: 8px auto 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq-item {
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.045);
+    }
+
+    .faq-item h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      margin-top: 50px;
+      padding: 34px 0;
+      background: #07142b;
+      color: #dbe3ef;
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .footer-logo img {
+      width: 160px;
+      height: auto;
+      max-height: 56px;
+      object-fit: contain;
+      filter: brightness(1.08);
+    }
+
+    .site-footer p {
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #dbe3ef;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 14px;
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      opacity: 0.86;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 720px) {
+      .main-nav {
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      .main-nav a {
+        padding: 8px 13px;
+      }
+
+      .hero-banner {
+        min-height: 330px;
+      }
+
+      .casino-row {
+        grid-template-columns: 44px 138px 1fr 150px;
+        gap: 14px;
+        padding: 10px 12px;
+      }
+
+      .casino-logo-box {
+        height: 58px;
+      }
+
+      .casino-title {
+        font-size: 15px;
+      }
+
+      .casino-desc {
+        font-size: 13px;
+      }
+
+      .casino-action {
+        grid-column: auto;
+      }
+
+      .play-btn {
+        min-height: 44px;
+      }
+
+      .faq-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 980px) {
+      .page {
+        width: min(100% - 40px, var(--max-width));
+      }
+
+      .casino-row {
+        grid-template-columns: 46px 150px 1fr 158px;
+      }
+
+      .content-box {
+        padding: 34px;
+      }
+    }
